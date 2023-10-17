@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website - Easy Tutorials</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.js">
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto&display=swap"
+        rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tuitter-bootstrap/5.1.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+     
+
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!----------swiper-------->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <!-----maps--->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+   
+
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" 
+   integrity="sha512-cx+NiEfA/8yVLiNjJfMv+X9EjtLQ1S5ZfS5/+5hC7wFD5Q4O4sw4u4Bp9VqwE+WjvnGz0tq3+SmUGzJtFw/vtQ==" crossorigin=""/>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"
+    integrity="sha512-Ki9XWLOJTyRSQiq/fRyGnLx7+lN5IE5ZfS5/+5hC7wFD5Q4O4sw4u4Bp9VqwE+WjvnGz0tq3+SmUGzJtFw/vtQ==" crossorigin=""></script>
+
+   
+</head>
+
+    <style type="text/css">
+       
+    </style>
+    <style>
+        #btnScrollToTop {
+            position: fixed;
+            right: 10px;
+            bottom: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e62739;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            color: #ffffff;
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+
+
+        }
+
+        #btnScrollToTop:active {
+            background: #cc2333;
+
+        }
+    </style>
+
+
+   
+       
+    </style>
+   
+           
+    <!-------------portfolio------------->
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+        }
+
+       
+
+        img {
+            vertical-align: middle;
+        }
+
+
+        .container {
+            position: relative;
+        }
+
+
+        .mySlides {
+            display: none;
+        }
+
+
+        .cursor {
+            cursor: pointer;
+        }
+
+
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -50px;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            -webkit-user-select: none;
+        }
+
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+
+
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+
+        .caption-container {
+            text-align: center;
+            background-color: #222;
+            padding: 2px 16px;
+            color: white;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+
+        .column {
+            float: left;
+            width: 16.66%;
+        }
+
+
+        .demo {
+            opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+    </style>
+    <!--------maps------->
+    <style>
+        #map{
+            height: 400px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class=" navbar-brand" href="#">
+                Hana
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main"
+                aria-controls="main" aria-expanded="false" aria-label="toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+            <div class="collapse navbar-collapse" id="main">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link p-lg-3 active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link p-lg-3" href="#about me">About me</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link p-lg-3" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link p-lg-3" href="#hobbies">Hobbies</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link p-lg-3" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link p-lg-3" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+
+                        <i class="bi bi-brightness-high-fill" id="toggleDark"></i>
+
+                    </li>
+                </ul>
+
+            </div>
+           
+            
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+    
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="row  align-items-center d-flex">
+                <div class="col-md-6 mt-2">
+                    <div class="image">
+                        <img class="fluid-img " src="image/project.png" alt="" width="500" height="500">
+                    </div>
+                </div>
+                <div class="col-md-6 mt-4">
+                    <div class="infor-personelle">
+                        <div class="content">
+                            <div class="info">
+                                <div class="d-flex">
+                                    <h1 class="mon-cv">"Welcome to my cv"</h1>
+
+                                </div>
+
+                                <h2>I'm hana talbi<br><span class="dev">Js Developer</span><br>based in Tunisia</h2>
+
+
+                                <ul>
+                                    <li>
+                                        <div class="text">
+                                            Name:
+                                        </div>
+                                        <div class="value">Hana</div>
+
+
+                                    </li>
+                                    <li>
+                                        <div class="text">
+                                            First Name:
+                                        </div>
+                                        <div class="value">Talbi</div>
+
+
+
+                                    </li>
+                                    <li>
+                                        <div class="text">
+                                            Age:
+                                        </div>
+                                        <div class="value">23</div>
+                                    </li>
+                                    <li>
+                                        <div class="text">
+                                            Phone:
+                                        </div>
+                                        <div class="value">26915849</div>
+                                    </li>
+                                    <li>
+                                        <div class="text">
+                                            Email:
+                                        </div>
+                                        <div class="value">Hana.Talbi03@gmail.com</div>
+                                    </li>
+                                </ul>
+                                <div class="mt-4">
+                                    <a class="main-btn" href="">Download cv</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+    <!---------------------about--------------------->
+
+    <section class="about-wrapper text-center pt-5 pb-4 mt-5 align-items-center" id="about me">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-5 mb-4 mb-lg-0">
+                    <img src="image/perfil.png" class="img-fluid rounded-3" alt="About-us" width="300px" height="300px">
+                </div>
+                <div class="col-lg-7 ps-lg-5 text-center text-lg-start">
+                    <div class="my-3 my-lg-0">
+                        <span class="subtitle">My About Details</span>
+                        <h2>About Me</h2>
+                        <p>css html javascript is used to create web pages</p>
+                    </div>
+                    <div class="pt-4">
+                        <ul class="nav nav-pills justify-content-center justify-content-lg-between mb-3" id="pills-tab"
+                            role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-skill"
+                                    aria-selected="true">Main skill</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-Css-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-Css" type="button" role="tab" aria-controls="pills-Css"
+                                    aria-selected="false">Css</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-Html-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-Html" type="button" role="tab" aria-controls="pills-Html"
+                                    aria-selected="false">Html</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-Javascript-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-Javascript" type="button" role="tab"
+                                    aria-controls="pills-Javascript" aria-selected="false">Javascript</button>
+                            </li>
+
+
+
+                        </ul>
+                        <div class="tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-skill" role="tabpanel"
+                                aria-labelledby="pills-Skill-tab">
+                                <div class="single-progress">
+                                    <h6>Css</h6>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width:95%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="label">75%</span>
+                                </div>
+                                <div class="single-progress">
+                                    <h6>Html</h6>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width:85%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="label">80%</span>
+                                </div>
+                                <div class="single-progress">
+                                    <h6>Javascript</h6>
+                                    <div class="progress">
+                                        <div class="progress-bar" role="progressbar" style="width:85%"
+                                            aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <span class="label">60%</span>
+                                </div>
+
+
+                            </div>
+
+
+
+                            <div class="tab-pane fade" id="pills-Css" role="tabpanel" aria-labelledby="pills-Css-tab">
+                                <ul class="text-start ps-0">
+                                    <li>
+                                        <a href="#">
+                                            css
+                                            <span>-Winner</span></a>
+
+
+                                    </li>
+                                    <li><a href="#">CSS Design Awards
+                                            <span>-Winner</span>
+                                        </a></li>
+                                    <li><a href="#">Design nominees
+                                            <span>-site of the day</span>
+                                        </a></li>
+                                    <a href="#">Css</a>
+                                </ul>
+                                <p>defines the color, dimensions, elements, and all
+                                    properties related
+                                    to how they appear on a web page</p>
+
+
+                            </div>
+
+
+                            <div class="tab-pane fade" id="pills-Html" role="tabpanel" aria-labelledby="pills-Html-tab">
+                                <ul class="text-start ps-0">
+                                    <li>
+                                        <a href="#">Html</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#">Html.com
+                                            Engineer</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="#">Html:
+                                        </a>
+                                        <p>The function of html is to structurally describe the
+                                            structure of web pages."</p>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-Javascript" role="tabpanel"
+                                aria-labelledby="pills-Javascript-tab">
+                                <ul class="text-start ps-0">
+                                    <li>
+                                        <a href="#">Javascript.com</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Javascript</a>
+                                    </li>
+                                </ul>
+
+                                <p>JavaScript (often abbreviated as << js >> is a lightweight, object-oriented scripting 
+                                    language, primarily know as the scripting language for web pages )
+                                </p>
+
+
+
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-education" role="tabpanel"
+                                aria-labelledby="pills-education-tab">
+                                <ul class="text-start ps-0">
+                                    <li>
+                                        <a href="#">BSc in css<span>ABC</span> institule</a>2023
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+    <!----------------services----------------->
+    <div id="services" id="services">
+        <div class="container">
+            <h1 class="sub-titles"> Services</h1>
+            <div class="services-list text-light">
+                <div>
+                    <i class="fas fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>The web designer designs and creates the visual identity
+                        of a website for which he creates all the graphic elements</p>
+                    
+            
+    
+                    <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fas fa-crop-alt"></i>
+                    <h2>ui/ux Design</h2>
+                    <p> UX design specialists with an international experience
+                        Professional training adapted to your level and needs
+                    </p>
+                    <a href="#">learn more</a>
+                </div>
+                <div>
+                    <i class="fab fa-app-store"></i>
+                    <h2>App Design</h2>
+                    <p> Design mobile app uiux prototyope layout in adobe.
+                        Design amazing app screenshots for ios or android apps
+                     
+                    </p>
+                    <a href="#">learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--------------hobbies-------------->
+    <section class="hobbies" id="hobbies">
+    <div id="portfolio pt-5 pb-4">
+        <div class="container">
+            <h1 class="sub_title">Hobbies</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src="image/p-1.jpeg" height="310">
+                    <div class="layer">
+                        <h3>Reading</h3>
+                        <p>Reading are among the hobbies that giv the owner great dignity
+                            , give him a very broad horizon
+                        </p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="image/p-2.jpeg">
+                    <div class="layer">
+                        <h3>Peint</h3>
+                        <p>Drawing is one of the beautiful hobbies that some people have</p>
+
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src="image/p-3.jpeg">
+                    <div class="layer">
+                        <h3>Sport</h3>
+                        <p>Sport it is a physical activity or skill that is practiced according
+                            to agreed-upon laws with the aim of entertainment...
+                        </p>
+                        <a href="#"><i class="fas fa-external-link-alt"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="bttn">See more</a>
+        </div>
+    </div>
+</section>
+    <!--------------portfolio-------------->
+  
+    <section id="portfolio">
+        <h2 style="text-align:center">Portfolio</h2>
+
+        <div class="container mt-4 mb-4 pt-4">
+            <div class="mySlides">
+                <div class="numbertext">1 / 6</div>
+                <img src="image/mediaquery.jpeg" style="width:100%" height="300px">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 6</div>
+                <img src="image/media.png" style="width:100%" height="300px">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 6</div>
+                <img src="image/java.jpeg" style="width:100%" height="300px">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 6</div>
+                <img src="image/full-stack.jpeg" style="width:100%" height="300px">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 6</div>
+                <img src="image/bootstrap.png" style="width:100%" height="300px">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">6 / 6</div>
+                <img src="image/dev.jpeg" style="width:100%" height="300px">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <img class="demo cursor" src="image/mediaquery.jpeg" style="width:100%" height="150px" onclick="currentSlide(1)"
+                        alt="Media query">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="image/media.png" style="width:100%" height="150px" onclick="currentSlide(2)"
+                        alt="Media query">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="image/java.jpeg" style="width:100%" height="150px" onclick="currentSlide(3)"
+                        alt="JavaScript">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="image/full-stack.jpeg" style="width:100%" height="150px" onclick="currentSlide(4)"
+                        alt="full-stack web Development">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="image/bootstrap.png" style="width:100%" height="150px"
+                        onclick="currentSlide(5)" alt="Bootstrap">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="image/dev.jpeg" style="width:100%" height="150px" onclick="currentSlide(6)"
+                        alt="developpement">
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+   
+    <!----------------map---------------->
+    <div id="map"></div>
+
+    <!-------------contact------------->
+    <section class="contact" id="contact">
+    <div id="contact pt-5 pb-4" >
+        <div class="container">
+            <div class="row">
+                <div class="contact-left ">
+                    <h1 class="sub_title">Contact Me</h1>
+                    <p><i class="fas fa-paper-plane"></i>Hana.talbi87@gmail.com</p>
+                    <p><i class="fas fa-phone-square-alt"></i>+21626915849</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com/"><i class="fab fa-facebook"></i></a>
+                        <a href=""><i class="fab fa-twitter-square"></i></a>
+                        <a href=""><i class="fab fa-instagram"></i></a>
+                        <a href=""><i class="fab fa-linkedin"></i></a>
+                    </div>
+
+                </div>
+                <div class="contact-right">
+                    <form name="formValidation" id="formValidation" action="valid.html">
+                        <div class="input-row">
+                            <input type="text" name="name" placeholder="your Name" required>
+                        </div>
+                        <div class="input-row">
+                            <input type="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="input-row">
+                            <textarea name="formMessage" rows="6" placeholder="Your Message*" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit"class="btn btn-primary">Send</button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="copyright text-light">
+            <p>Copyright Hana Talbi <i class="fas fa-heart"></i></p>
+        </div>
+    </div>
+</section>
+<!----------scrolldown--------->
+<button id="btnScrollToTop">
+    <i class="material-icons">
+        <i class="fa-solid fa-arrow-up"></i>
+    </i>
+</button>
+
+<!--------------maps--------------->
+
+
+<script>
+var map = L.map('map').setView([36.0837, 9.3667], 13);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data &copy; OpenStreetMap contributors'
+}).addTo(map);
+
+
+var marker = L.marker([36.0837, 9.3667]).addTo(map);
+marker.bindPopup("This is Siliana, Tunisia.");
+</script>
+
+   
+    <!----------------scrolldown-------------->
+    <script>
+        const btnScrollToTop = document.querySelector("#btnScrollToTop");
+        btnScrollToTop.addEventListener("click", function () {
+            // window.scrollTo(0, 0);
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+
+
+            });
+            $("html, body").animate({ ScrollToTop: 0 }, "slow");
+
+        });
+    </script>
+    
+    
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="text/javascript">
+        var swiper = new Swiper(".card_slider", {
+
+            spaceBetween: 30,
+            loop: true,
+            speed: 100,
+            autoplay: {
+                delay: 2000,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+
+
+                },
+                480: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 3,
+
+
+                },
+                1200: {
+                    slidesPerView: 4,
+
+                },
+            },
+        });
+    </script>
+   
+
+
+
+
+
+
+    
+        <!--contact-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script type="text/javascript"
+
+        src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+        <!-------------------contact--------------->
+    <script>
+        $("#formValidation").validate({
+            rules: {
+                name: {
+                    minlength: 2
+                },
+                email:{
+                    email:true
+                }
+
+            },
+            messages: {
+                name:{
+                    required: "Please enter your name",
+                    minlength: "Name at least 2 characters"
+                },
+                email: "Please enter your email",
+                formMessage: "Please enter your Message"
+                
+
+            },
+
+
+
+            submitHandler: function (form) {
+                form.submit();
+
+            }
+        });
+    </script>
+    <!-----------darkmode--------->
+    <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.3.4/lib/darkmode-js.min.js"></script>
+
+
+    <script>
+        const Toggle = document.getElementById('toggleDark');
+        const body = document.querySelector('body');
+        Toggle.addEventListener('click', function(){
+            this.classList.toggle('bi-moon');
+            if(this.classList.toggle('bi-brightness-high-fill')){
+                body.style.background ='white';
+                body.style.color ='black';
+                body.style.transition ='2s';
+
+            }
+            else{
+                body.style.background ='black';
+                body.style.color ='white';
+                body.style.transition ='2s';
+            }
+        })
+
+
+        
+
+
+    </script>
+<!---------------portfolio----------------->
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("demo");
+        let captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>
+
+    <script src="script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+  
+</body>
+
+</html>
